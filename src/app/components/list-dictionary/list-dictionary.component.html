@@ -1,0 +1,36 @@
+<!-- list-dictionary.component.html -->
+<div class="container mt-4">
+    <h2>Listado de Palabras en el Diccionario</h2>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nombre</th>
+          <th>Descripción</th>
+          <th>Tipo de Palabra</th>
+          <th>Borrar</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let word of listDictionary">
+          <td>{{ word.id }}</td>
+          <td>{{ word.name}}</td>
+          <td>{{ word.description }}</td>
+          <td>{{ word.partOfSpeech.name }}</td>
+          <td><button class="btn btn-danger" (click)="bookDelete(word.id)">Borrar</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="container mt-5">
+    <h1>Lista de Productos</h1>
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Nombre: {{ partOfSpeechActual?.name }}</h5>
+        <p class="card-text">Descripción: {{ partOfSpeechActual?.description }}</p>
+        <button class="btn btn-primary" style="margin-right: 2%;" (click)="mostrarProductoAnterior()">Mostrar Producto Anterior</button>
+        <button class="btn btn-primary" (click)="mostrarSiguienteProducto()">Mostrar Siguiente Producto</button>
+      </div>
+    </div>
+  </div>
+  

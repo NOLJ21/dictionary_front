@@ -1,0 +1,24 @@
+<div class="container">
+    <h1>Bienvenido al Diccionario en Línea</h1>
+    <p>Encuentra la definición de cualquier palabra que desees:</p>
+
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <form [formGroup]="createWordForm" (ngSubmit)="onSubmit()" autocomplete="off"><br>
+                <div class="col-sm-6 form-group">
+                    <label for="firstName">Nombre:</label>
+                    <input type="text" class="form-control" formControlName="word" required>
+                </div><br>
+                <button type="submit" class="btn btn-success" onsubmit="">Buscar Palabra</button><br><br>
+            </form>    
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <!-- Aquí puedes mostrar la definición de la palabra buscada, si existe -->
+            <h2>Definición de la palabra buscada</h2>
+            <p>Aquí aparecerá la definición de la palabra.</p>
+        </div>
+    </div>
+</div>
